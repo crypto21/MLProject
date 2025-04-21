@@ -4,6 +4,8 @@ import mlflow
 import mlflow.sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+import os
+import joblib
 
 # Load preprocessed data
 X_train = pd.read_csv('esrb_rating_dataset_preprocessing/X_train.csv')
@@ -20,3 +22,9 @@ with mlflow.start_run():
     preds = model.predict(X_test)
     acc = accuracy_score(y_test, preds)
     print(f"Accuracy: {acc}")
+
+# Buat folder model jika belum ada
+os.makedirs("model", exist_ok=True)
+
+# Simpan model ke dalam folder
+joblib.dump(model, "model/model.pkl")
