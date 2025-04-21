@@ -1,8 +1,13 @@
+name: mlproject
 channels:
-- defaults
+  - conda-forge
+  - defaults
 dependencies:
-- python=3.12.7
-- scikit-learn=1.5.2
-- pandas
-- mlflow=2.19.0
-name: esrb_env
+  - python=3.10
+  - pip
+  - scikit-learn
+  - pandas
+  - numpy
+  - matplotlib
+  - pip:
+      - mlflow==2.19.0
