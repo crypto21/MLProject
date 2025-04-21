@@ -23,7 +23,7 @@ jobs:
         activate-environment: mlproject
 
     - name: Install Python dependencies
-      run: python -m pip install --upgrade pip pandas numpy matplotlib scikit-learn
+      run: python -m pip install --upgrade pip pandas numpy matplotlib scikit-learn mlflow==2.19.0
 
     - name: Run Training Script
       run: |
